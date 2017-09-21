@@ -108,7 +108,7 @@ better.DataTable = better.defClass({
 		
 		view.searchInput = view.search.appendChild(document.createElement('input'));
 		view.searchInput.setAttribute('type', 'text');
-		view.searchInput.setAttribute('placeholder', 'Filter');
+		view.searchInput.setAttribute('placeholder', 'Search');
 		view.searchInput.addEventListener('input', setTimer);
 		
 		view.info = view.footer.appendChild(document.createElement('div'));
@@ -338,13 +338,10 @@ better.DataTable = better.defClass({
 							}
 						}
 						else if (column.field) {
-							var value = item[column.field];
-							if (value !== null && value !== undefined) {
-								value = value.toString().toLowerCase();
-								if (value.indexOf(term) >= 0) {
-									itemsView.push(item);
-									break;
-								}
+							var value = item[column.field].toString().toLowerCase();
+							if (value.indexOf(term) >= 0) {
+								itemsView.push(item);
+								break;
 							}
 						}
 					}
@@ -494,6 +491,7 @@ better.DataTable = better.defClass({
 					cell.setAttribute('class', 'b-sortable');
 					link = cell.appendChild(document.createElement('a'));
 					link.setAttribute('href', 'javascript:void(0);');
+
 					link.addEventListener('click', function() {
 						that.sort(column.index);
 					});
@@ -523,14 +521,14 @@ better.DataTable = better.defClass({
 		lastItem++;
 		
 		if (showingAllItems) {
-			str = 'Showing '+items.length+' '+(showingOneItem ? 'record' : 'records')+'.';
+			str = 'Showing '+items.length+' '+(showingOneItem ? 'item' : 'items')+'.';
 		}
 		else {
 			if (showingOneItem) {
-				str = 'Showing record '+firstItem+' of '+items.length+'.';
+				str = 'Showing item '+firstItem+' of '+items.length+'.';
 			}
 			else {
-				str = 'Showing records '+firstItem+' to '+lastItem+' of '+items.length+'.';
+				str = 'Showing items '+firstItem+' to '+lastItem+' of '+items.length+'.';
 			}
 		}
 		view.info.innerHTML = str;

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.css">
+		<link rel="stylesheet" href="BetterDataTable.css" />
+		<style>
+body {
+	background-color: #e8e8e8;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+}
+.controls {
+	display: inline-block;
+	border: solid 1px #808080;
+	border-radius: 8px;
+	margin: 16px;
+	padding: 8px;
+}
+.controls input[type="number"] {
+	width: 64px;
+	font-size: inherit;
+}
+		</style>
+		<script src="BetterDataTable.js"></script>
+		<script src="test.js"></script>
+	</head>
+	<body>
+		<h2>People</h2>
+		<div style="display: flex">
+			<div>
+				<div class="controls">
+					<p>
+						<input type="number" min="0" step="1" value="100" onChange="app.setNumItems(this)" /> Num Items
+					</p><p>
+						<input type="checkbox" checked="checked" onChange="app.setPaging(this)" /> Paging
+						<input type="number" min="1" step="1" value="10" onChange="app.setPageSize(this)" /> Page Size
+						<input type="number" min="0" step="1" value="3" onChange="app.setPageNavSpan(this)" /> Nav Span
+					</p><p>
+						<input type="checkbox" checked="checked" onChange="app.setSearchable(this)" /> Searchable
+					</p>
+				</div>
+			</div>
+			<div>
+				<div id="tableContainer"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -3,7 +3,6 @@
 
 .b-datatable {
 	display: inline-block;
-        width: 100%;
 }
 .b-datatable-header {
 	display: flex;
@@ -15,19 +14,12 @@
 }
 .b-datatable-table {
 }
-
 .b-datatable-table > thead > tr > th.b-sortable {
 	cursor: pointer;
-        user-select: none;
-}
-
-.b-datatable-table > thead > tr > th > a {
-  text-decoration: none;
-  color: white;
+	user-select: none;
 }
 .b-datatable-page-sizes {
-	alignment-adjust: central
-  //      align-self: center;
+	align-self: center;
 }
 .b-datatable-search {
 	align-self: center;
@@ -48,9 +40,9 @@
 /* Customizations */
 
 .b-datatable {
-//	border: solid 1px #202020;
+	border: solid 1px #202020;
 	border-radius: 4px;
-//	background-color: #80c0ff;
+	background-color: #80c0ff;
 	padding: 2px;
 }
 .b-datatable-header {
@@ -65,10 +57,7 @@
 .b-datatable-table {
 	border: solid 1px #202020;
 	border-spacing: 0px;
-        background-color: rgba(33,82,131,1);
-        border-radius: 10px 10px 0px 0px;
 	width: 100%;
-        word-break: break-all;
 }
 .b-datatable-table > thead > tr > th,
 .b-datatable-table > tbody > tr > td {
@@ -77,19 +66,15 @@
 	border-width: 0px 1px 1px 0px;
 	padding: 4px;
 }
-.b-datatable-table > thead > tr > th  {
-	text-decoration: none;
-	color: white;
-        border-color: #808080;
+.b-datatable-table > thead > tr > th {
+	border-color: #808080;
 	border-style: solid;
 	border-width: 0px 0px 1px 0px;
+	background-color: #c0e0ff;
 	padding: 4px 12px;
 }
-
 .b-datatable-table > thead > tr > th.b-sortable:hover {
-//	background-color: #e0f0ff;
-    color:#C0FFFF;
-    cursor:pointer;
+	background-color: #e0f0ff;
 }
 .b-datatable-table > thead > tr > th.b-sortable::after { content: ' \f0dc'; font-family: FontAwesome; }
 .b-datatable-table > thead > tr > th.b-asc::after { content: ' \f0de'; }
@@ -128,4 +113,3 @@
 	color: #000000;
 }
 .b-datatable-pagenav > a:hover { background-color: #ffffe0; }
-
